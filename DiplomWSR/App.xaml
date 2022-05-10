@@ -6,8 +6,13 @@
              xmlns:view="clr-namespace:DiplomWSR.MVVM.View"
              StartupUri="LoginWindow.xaml"
     xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+    
     <Application.Resources>
+
+        
+
         <ResourceDictionary>
+            
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/TextBoxSearchTheme.xaml"/>
@@ -17,8 +22,14 @@
             <DataTemplate DataType="{x:Type viewModel1:HomeViewModel}">
                 <view:HomeView/>
             </DataTemplate>
-            
-            
+
+            <PathGeometry x:Key="showPassword"
+                      Figures="M15 5C6.081703 5 0.32098813 14.21118 0.21679688 14.378906 A 1 1 0 0 0 0 15 A 1 1 0 0 0 0.16210938 15.544922 A 1 1 0 0 0
+                      0.16601562 15.550781C0.18320928 15.586261 5.0188313 25 15 25C24.938822 25 29.767326 15.678741 29.826172 15.564453 A 1 1 0 0 0 29.837891 
+                      15.544922 A 1 1 0 0 0 30 15 A 1 1 0 0 0 29.785156 14.380859 A 1 1 0 0 0 29.783203 14.378906C29.679012 14.21118 23.918297 5 15 5 z M 15 8C18.866 8 
+                      22 11.134 22 15C22 18.866 18.866 22 15 22C11.134 22 8 18.866 8 15C8 11.134 11.134 8 15 8 z M 15 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 18 A 3 3 0 0 0 18 15 
+                      A 3 3 0 0 0 15 12 z"/>
+
             <DataTemplate DataType="{x:Type viewModel1:AboutProgramViewModel}">
                 <view:AboutProgramView/>
             </DataTemplate>
@@ -32,5 +43,7 @@
             </DataTemplate>
 
         </ResourceDictionary>
+        
+        
     </Application.Resources>
 </Application>

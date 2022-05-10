@@ -7,7 +7,7 @@
         xmlns:viewModel="clr-namespace:DiplomWSR.MVVM.ViewModel"
         mc:Ignorable="d"
         Height="600" Width="920"
-        WindowStyle="SingleBorderWindow"
+        WindowStyle="None"
         ResizeMode="NoResize"
         
         AllowsTransparency="False"

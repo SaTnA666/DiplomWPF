@@ -1,4 +1,4 @@
-﻿<Window x:Class="DiplomWSR.LoginWindow"
+﻿<Window xmlns:Theme="clr-namespace:DiplomWSR.Theme"  x:Class="DiplomWSR.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -13,31 +13,103 @@
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    <Grid Background="Transparent">
-        <Border Background="#ffdadada"
-            CornerRadius="15">
-            <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="600" CornerRadius="15">
+    <Window.Resources>
+        <Style x:Key="primaryButton" TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Background" Value="#1976d2"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+                            x:Name="bd"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
+                            <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding
+                                HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding 
+                                VerticalContentAlignment}"
+                                TextBlock.Foreground="{TemplateBinding
+                                Foreground}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="bd" Property="Background" 
+                                        Value="#63a4ff"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border 
+                CornerRadius="15"
+                Background="AliceBlue">
+    <Grid>
 
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="30" Color="Gray" ShadowDepth="0"/>
-                    
-                </Border.Effect>
-
-                <StackPanel>
-                    <TextBlock Text="100ТЗЛОГИСТ" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
-                    <Grid Margin="0 0 0 20">
-                        <Button HorizontalAlignment="Left" Content="Регистрация"/>
-                        <Button HorizontalAlignment="Right" Content="Войти"/>
-                    </Grid>
-
-                    <TextBox Margin="20 20 20 20" />
-                    <TextBox Margin="20 20 20 20"/>
-
-                    <Button Content="Войти" Margin="0 0 20 20"></Button>
-                    
-                </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+            <!--Эмблема-->
+            <TextBlock
+                Margin="35,0"
+                FontSize="30"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center">
+                <Run
+                        Text="Логист"
+                        Foreground="#03a9f4"/><Run
+                         FontWeight="Bold"
+                        Text="100ТЗ"
+                         Foreground="#0d47a1"/>
+            </TextBlock>
+            
+            <!--Разметка авторизации-->
+            <Grid Grid.Row="1"
+                    Width="400"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/> <!--Логин пользователя-->
+                    <RowDefinition Height="100"/> <!--Пароль-->
+                    <RowDefinition Height="100"/> <!--Кнопка авторизации-->
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
                 
-            </Border>
-        </Border>
+                <!--Поле для ввода логина-->
+                
+                <Theme:TextBoxWithPlaceHolder Grid.Row="1" 
+                                              PlaceHolder="Введите логин"/>
+                
+                <!--Поле для ввода пароля-->
+
+                <Theme:TextBoxWithPlaceHolder Grid.Row="2" 
+                                              PlaceHolder="Введите пароль"
+                                              IsPassword="True"/>
+
+                <Grid
+                    Grid.Row="3"
+                    Margin="10"
+                    Height="60">
+
+                    <Button
+                        Content="Войти"
+                        Click="Button_Click"
+                        Style="{StaticResource primaryButton}"/>
+
+                </Grid>
+
+
+            </Grid>
+        
     </Grid>
+    </Border>
 </Window>
