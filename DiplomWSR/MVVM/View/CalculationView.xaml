@@ -1,0 +1,135 @@
+﻿<UserControl x:Class="DiplomWSR.MVVM.View.CalculationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DiplomWSR.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+           
+            
+            
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Text="Рассчет логистики"
+                            Foreground="#2196F3"
+                            FontSize="23"
+                            HorizontalAlignment="Left"
+                            Margin="0,0,0,20"
+                            Grid.ColumnSpan="2"/>
+        <TextBlock Text="Название"
+                            Foreground="#2196F3"
+                            FontSize="16"
+                            Grid.Row="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+        <TextBlock Text="Ширина"
+                            Foreground="#2196F3"
+                            FontSize="16"
+                            Grid.Row="4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+        <TextBlock Text="Высота"
+                            Foreground="#2196F3"
+                            FontSize="16"
+                            Grid.Row="2"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+        <TextBlock Text="Длина"
+                            Foreground="#2196F3"
+                            FontSize="16"
+                            Grid.Row="3"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+        <TextBox 
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="15"
+            HorizontalContentAlignment="Center"/>
+        <TextBox 
+            Grid.Column="1"
+            Grid.Row="2"
+            Margin="15"
+            HorizontalContentAlignment="Center"/>
+        <TextBox 
+            Grid.Column="1"
+            Grid.Row="3"
+            Margin="15"
+            HorizontalContentAlignment="Center"/>
+        <TextBox 
+            Grid.Column="1"
+            Grid.Row="4"
+            Margin="15"
+            HorizontalContentAlignment="Center"/>
+
+
+        <TextBlock Text="Откуда"
+                            Foreground="#2196F3"
+                            FontSize="16"
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+        <TextBlock Text="Куда"
+                            Foreground="#2196F3"
+                            FontSize="16"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+        <TextBlock Text="Вес"
+                            Foreground="#2196F3"
+                            FontSize="16"
+                            Grid.Row="3"
+                   Grid.Column="2"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+       
+        <TextBox 
+            Grid.Column="3"
+            
+            Grid.Row="3"
+            Margin="15"
+            HorizontalContentAlignment="Center"/>
+        <TextBox 
+            Grid.Column="3"
+            Grid.Row="2"
+            Margin="15"
+            HorizontalContentAlignment="Center"/>
+        <TextBox 
+            Grid.Column="3"
+            Grid.Row="1"
+            Margin="15"
+            HorizontalContentAlignment="Center"/>
+
+        <Button Grid.Column="3"
+                      Grid.Row="5"
+                       Content="Рассчитать"
+                        Margin="10"
+                        FontSize="16"/>
+
+    </Grid>
+    
+    
+
+
+</UserControl>

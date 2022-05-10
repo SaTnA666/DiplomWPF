@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiplomWSR", "DiplomWSR\DiplomWSR.csproj", "{50F00402-98EA-4215-BE3F-0164FEF1B91D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlavDostavka.API", "..\..\..\Downloads\Telegram Desktop\GlavDostavka.API (2)\GlavDostavka.API\GlavDostavka.API.csproj", "{C5E3BE8A-3F1E-4D46-89D2-EDDCF88FA52E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		TESTReal|Any CPU = TESTReal|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50F00402-98EA-4215-BE3F-0164FEF1B91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F00402-98EA-4215-BE3F-0164FEF1B91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F00402-98EA-4215-BE3F-0164FEF1B91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F00402-98EA-4215-BE3F-0164FEF1B91D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F00402-98EA-4215-BE3F-0164FEF1B91D}.TESTReal|Any CPU.ActiveCfg = Release|Any CPU
+		{50F00402-98EA-4215-BE3F-0164FEF1B91D}.TESTReal|Any CPU.Build.0 = Release|Any CPU
+		{C5E3BE8A-3F1E-4D46-89D2-EDDCF88FA52E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E3BE8A-3F1E-4D46-89D2-EDDCF88FA52E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5E3BE8A-3F1E-4D46-89D2-EDDCF88FA52E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E3BE8A-3F1E-4D46-89D2-EDDCF88FA52E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5E3BE8A-3F1E-4D46-89D2-EDDCF88FA52E}.TESTReal|Any CPU.ActiveCfg = TESTReal|Any CPU
+		{C5E3BE8A-3F1E-4D46-89D2-EDDCF88FA52E}.TESTReal|Any CPU.Build.0 = TESTReal|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F86832E5-E117-4C2B-9EE4-8120D1E93F2B}
+	EndGlobalSection
+EndGlobal
