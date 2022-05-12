@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DiplomWSR.MVVM.Model;
 
 namespace DiplomWSR
 {
@@ -24,9 +25,57 @@ namespace DiplomWSR
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Authorization_Click(object sender, RoutedEventArgs e)
         {
+            string login = loginViewBox.Text.Trim();
+            string password = passwordViewBox.passwordBox.Password;
 
+            //Проверка на корректный ввод
+
+            if (login.Length < 5)
+            {
+                
+                loginViewBox.title.Text = "Не верно введен логин";
+                loginViewBox.title.Foreground = Brushes.Red;
+
+            }
+
+            else if (password.Length < 2)
+            {
+
+                passwordViewBox.title.Text = "Не корректно введен пароль";
+                passwordViewBox.title.Foreground = Brushes.Red;
+
+            }
+
+            else
+            {
+
+                //Поиск пользователя в базе данных
+
+                Profile authorizationUser = null;
+                using (ProfileContext db = new ProfileContext())
+                {
+                    authorizationUser = db.Profiles.Where(b => b.Login == login &&
+                    b.Password == password).FirstOrDefault();
+
+
+                    //Запуск окна с параметрами
+
+                    if (authorizationUser != null)
+                    {
+                        string roleUser = authorizationUser.Role;
+                        MainWindow mw = new MainWindow();
+                        mw.DetectUserRole(roleUser);
+                        mw.Show();
+                        this.Hide();
+                        
+                    }
+                    else
+                        MessageBox.Show("Логин или пароль не найден");
+                }
+            }
+            
         }
     }
 }

@@ -27,10 +27,31 @@ namespace DiplomWSR
         {
             InitializeComponent();
 
-           
-
         }
 
-        
+        //Проверка роли пользователя и подстраивание меню под роль
+        public void DetectUserRole(string roleUser)
+        {
+            if (roleUser == "Администратор")
+            {
+                
+            }
+
+            if (roleUser == "Работник")
+            {
+                statisticMenuButton.Visibility= Visibility.Collapsed;
+                aboutMenuButton.Visibility= Visibility.Collapsed;
+
+            }
+
+            if(roleUser == "Директор")
+            {
+                calculateMenuButton.Visibility= Visibility.Collapsed;
+                aboutMenuButton.Visibility = Visibility.Collapsed;
+                profileMenuButton.Visibility= Visibility.Collapsed;
+            }
+        }
+
+
     }
 }

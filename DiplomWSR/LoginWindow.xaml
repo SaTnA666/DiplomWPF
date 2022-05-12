@@ -20,6 +20,8 @@
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Background" Value="#1976d2"/>
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="15"/>
+            
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -87,13 +89,15 @@
                 <!--Поле для ввода логина-->
                 
                 <Theme:TextBoxWithPlaceHolder Grid.Row="1" 
-                                              PlaceHolder="Введите логин"/>
+                                              PlaceHolder="Введите логин"
+                                              x:Name="loginViewBox"/>
                 
                 <!--Поле для ввода пароля-->
 
                 <Theme:TextBoxWithPlaceHolder Grid.Row="2" 
                                               PlaceHolder="Введите пароль"
-                                              IsPassword="True"/>
+                                              IsPassword="True"
+                                              x:Name="passwordViewBox"/>
 
                 <Grid
                     Grid.Row="3"
@@ -102,7 +106,7 @@
 
                     <Button
                         Content="Войти"
-                        Click="Button_Click"
+                        Click="Authorization_Click"
                         Style="{StaticResource primaryButton}"/>
 
                 </Grid>

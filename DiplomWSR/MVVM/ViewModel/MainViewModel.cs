@@ -10,10 +10,12 @@ namespace DiplomWSR.MVVM.ViewModel
      class MainViewModel : ObservableObject
 
      {
+        public RelayCommand ProductsViewCommand { get; set; }
         public RelayCommand CalculationViewCommand { get; set; }
         public RelayCommand StatisticViewCommand { get; set; }
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand AboutProgramViewCommand { get; set; }
+        public ProductsViewModel Products { get; set; } 
         public AboutProgramViewModel AboutProgram { get; set; }
         public StatisticViewModel Statistic { get; set; }
         public CalculationViewModel Calculation { get; set; }
@@ -31,6 +33,9 @@ namespace DiplomWSR.MVVM.ViewModel
          }
         public MainViewModel()
         {
+
+           
+
             //Start View
             HomeVM = new HomeViewModel();
             CurrentView = HomeVM;
@@ -39,6 +44,7 @@ namespace DiplomWSR.MVVM.ViewModel
             AboutProgram = new AboutProgramViewModel();
             Statistic = new StatisticViewModel();
             Calculation = new CalculationViewModel();
+            Products = new ProductsViewModel();
 
             HomeViewCommand = new RelayCommand(o => 
             {
@@ -59,6 +65,13 @@ namespace DiplomWSR.MVVM.ViewModel
             {
                 CurrentView = Calculation;
             });
+
+            ProductsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = Products;
+            });
+
+            
 
         }
     }

@@ -12,34 +12,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DiplomWSR;
+using DiplomWSR.MVVM.Model;
 using System.Data.Entity;
-using DiplomWSR.Core;
-using DiplomWSR.MVVM.ViewModel;
 
 namespace DiplomWSR.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для CalculationView.xaml
+    /// Логика взаимодействия для ProductsView.xaml
     /// </summary>
-    public partial class CalculationView : UserControl
+    public partial class ProductsView : Page
     {
-        public CalculationView()
+
+        
+
+        ProductsContext db;
+
+        public ProductsView()
         {
             InitializeComponent();
 
-
-
+            db = new ProductsContext();
+            db.Products.Load();
+            productsDg.ItemsSource = db.Products.Local.ToBindingList();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-            
-
-        }
-        //DataContext = null;
-        //DataContext = new ProductsView();
     }
-    
 }

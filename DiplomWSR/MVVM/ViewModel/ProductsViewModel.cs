@@ -7,8 +7,10 @@ using System.Windows.Input;
 
 namespace DiplomWSR.MVVM.ViewModel
 {
-    internal class CalculationViewModel
+    internal class ProductsViewModel
     {
+
         
+
     }
 }

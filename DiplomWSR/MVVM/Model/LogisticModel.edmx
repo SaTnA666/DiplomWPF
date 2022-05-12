@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище LogisticModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище LogisticModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Calculation">
           <Key>
             <PropertyRef Name="ID" />
@@ -16,6 +16,15 @@
           <Property Name="UserID" Type="int" />
           <Property Name="CreaterID" Type="int" />
           <Property Name="Date" Type="date" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="id" Type="bigint" />
+          <Property Name="region" Type="nvarchar(max)" />
+          <Property Name="distanceToTheRegionalCity" Type="bigint" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -46,6 +55,7 @@
           <Property Name="Width" Type="int" />
           <Property Name="Height" Type="int" />
           <Property Name="Weight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Length" Type="int" />
         </EntityType>
         <EntityType Name="Profile">
           <Key>
@@ -208,6 +218,7 @@
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="Хранилище LogisticModelContainer">
           <EntitySet Name="Calculation" EntityType="Self.Calculation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LogisticsCalculation" EntityType="Self.LogisticsCalculation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
@@ -244,8 +255,7 @@
             <End Role="Statistics" EntitySet="Statistics" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LogisticModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -298,6 +308,7 @@
           <Property Name="Height" Type="Int32" />
           <Property Name="Weight" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="LogisticsCalculation" Relationship="Self.FK_LogisticsCalculation_Product" FromRole="Product" ToRole="LogisticsCalculation" />
+          <Property Name="Length" Type="Int32" />
         </EntityType>
         <EntityType Name="Profile">
           <Key>
@@ -500,6 +511,7 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="Cities" EntityType="LogisticModel.Cities" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -512,6 +524,15 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int64" />
+          <Property Name="region" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="distanceToTheRegionalCity" Type="Int64" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -556,6 +577,7 @@
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="LogisticModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Length" ColumnName="Length" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Width" ColumnName="Width" />
@@ -636,6 +658,16 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище LogisticModel.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище LogisticModel.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="LogisticModel.Cities">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="distanceToTheRegionalCity" ColumnName="distanceToTheRegionalCity" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

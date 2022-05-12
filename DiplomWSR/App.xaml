@@ -19,6 +19,8 @@
                 <ResourceDictionary Source="Styles/DataGrid.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+            
+
             <DataTemplate DataType="{x:Type viewModel1:HomeViewModel}">
                 <view:HomeView/>
             </DataTemplate>
@@ -40,6 +42,10 @@
 
             <DataTemplate DataType="{x:Type viewModel1:CalculationViewModel}">
                 <view:CalculationView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel1:ProductsViewModel}">
+                <view:HomeView/>
             </DataTemplate>
 
         </ResourceDictionary>

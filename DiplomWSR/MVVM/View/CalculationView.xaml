@@ -5,10 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DiplomWSR.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             >
     <Grid>
         <Grid.ColumnDefinitions>
             
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -19,113 +21,76 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+
+            
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
 
-        <TextBlock Text="Рассчет логистики"
-                            Foreground="#2196F3"
-                            FontSize="23"
-                            HorizontalAlignment="Left"
-                            Margin="0,0,0,20"
-                            Grid.ColumnSpan="2"/>
-        <TextBlock Text="Название"
-                            Foreground="#2196F3"
-                            FontSize="16"
-                            Grid.Row="1"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
-        <TextBlock Text="Ширина"
-                            Foreground="#2196F3"
-                            FontSize="16"
-                            Grid.Row="4"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
-        <TextBlock Text="Высота"
-                            Foreground="#2196F3"
-                            FontSize="16"
-                            Grid.Row="2"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
-        <TextBlock Text="Длина"
-                            Foreground="#2196F3"
-                            FontSize="16"
-                            Grid.Row="3"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
-        <TextBox 
-            Grid.Column="1"
-            Grid.Row="1"
-            Margin="15"
-            HorizontalContentAlignment="Center"/>
-        <TextBox 
-            Grid.Column="1"
-            Grid.Row="2"
-            Margin="15"
-            HorizontalContentAlignment="Center"/>
-        <TextBox 
-            Grid.Column="1"
-            Grid.Row="3"
-            Margin="15"
-            HorizontalContentAlignment="Center"/>
-        <TextBox 
-            Grid.Column="1"
-            Grid.Row="4"
-            Margin="15"
-            HorizontalContentAlignment="Center"/>
+       <DataGrid x:Name = "logisticDg"
+                 
+                 Grid.Row="2"
+                 Grid.ColumnSpan="5"
+                 Grid.RowSpan="2"
+                 AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                                    Width="35"/>
+                <DataGridTextColumn Header="Название"
+                                    Width="150"/>
+                <DataGridTextColumn Header="Вес"
+                                    Width="50"/>
+                <DataGridTextColumn Header="Длина"
+                                    Width="50"/>
+                <DataGridTextColumn Header="Ширина"
+                                    Width="50"/>
+                <DataGridTextColumn Header="Высота"
+                                    Width="50"/>
 
+            </DataGrid.Columns>
+       </DataGrid>
 
-        <TextBlock Text="Откуда"
-                            Foreground="#2196F3"
-                            FontSize="16"
-                            Grid.Row="1"
-                            Grid.Column="2"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
-        <TextBlock Text="Куда"
-                            Foreground="#2196F3"
-                            FontSize="16"
-                            Grid.Row="2"
-                            Grid.Column="2"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
-        <TextBlock Text="Вес"
-                            Foreground="#2196F3"
-                            FontSize="16"
-                            Grid.Row="3"
-                   Grid.Column="2"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
-       
-        <TextBox 
-            Grid.Column="3"
+        <Button Grid.Column="0"
+                Margin="10"
+                Content="Выбрать товар"
+                FontSize="15"
+                Click="Button_Click"
+                Command="{Binding CalculationViewCommand}"
+                >
             
-            Grid.Row="3"
-            Margin="15"
-            HorizontalContentAlignment="Center"/>
-        <TextBox 
-            Grid.Column="3"
-            Grid.Row="2"
-            Margin="15"
-            HorizontalContentAlignment="Center"/>
-        <TextBox 
-            Grid.Column="3"
-            Grid.Row="1"
-            Margin="15"
-            HorizontalContentAlignment="Center"/>
+        </Button>
 
-        <Button Grid.Column="3"
-                      Grid.Row="5"
-                       Content="Рассчитать"
-                        Margin="10"
-                        FontSize="16"/>
+        <TextBlock
+            Grid.Row="1"
+            FontSize="16"
+            HorizontalAlignment="Right"
+            Margin="0 0 20 0"
+            VerticalAlignment="Center"
+            Text="Откуда"/>
+
+        <TextBox x:Name="cmbFrom" Grid.Column="1"
+                  Grid.Row="1"
+                  Margin="10">
+            
+        </TextBox>
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="2"
+            FontSize="16"
+            HorizontalAlignment="Right"
+            Margin="0 0 20 0"
+            VerticalAlignment="Center"
+            Text="Куда"/>
+        
+        <TextBox x:Name="cmdWhere" Grid.Column="3"
+                  Grid.Row="1"
+                  Margin="10">
+
+        </TextBox>
 
     </Grid>
     

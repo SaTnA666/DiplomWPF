@@ -9,7 +9,7 @@
         Height="600" Width="920"
         WindowStyle="None"
         ResizeMode="NoResize"
-        
+        WindowStartupLocation="CenterScreen"
         AllowsTransparency="False"
         Background="Transparent">
 
@@ -34,46 +34,72 @@
                 
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Логист100TЗ"
+            <!--<TextBlock Text="Логист100TЗ"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
                            Foreground="#2196F3"
                            FontSize="26"
-                           Margin="20, 0, 0, 0"/>
+                           Margin="20, 0, 0, 0"/>-->
+            
+            <!--Меню приложения-->
 
             <StackPanel Grid.Row="1">
 
                 <RadioButton Content="Домашняя"
+                             x:Name="homeMenuButton"
                                        Height="50"
                                        Foreground="#0D47A1"
                                        FontSize="16"
                                        IsChecked="True"
                                        Style="{StaticResource MenuButtonTheme}"
                                        Command="{Binding HomeViewCommand}"/>
-                <RadioButton Content="Рассчет"
+                <RadioButton Content="Расчет"
+                             x:Name="calculateMenuButton"
                                        Height="50"
                                        Foreground="#0D47A1"
                                        FontSize="16" IsChecked="False"
                                        Style="{StaticResource MenuButtonTheme}"
                                        Command="{Binding CalculationViewCommand}"/>
                 <RadioButton Content="Статистика"
+                             x:Name="statisticMenuButton"
                                        Height="50"
                                        Foreground="#0D47A1"
                                        FontSize="16" IsChecked="False"
                                        Style="{StaticResource MenuButtonTheme}"
                                        Command="{Binding StatisticViewCommand}"/>
                 <RadioButton Content="О программе"
+                             x:Name="aboutMenuButton"
                                        Height="50"
                                        Foreground="#0D47A1"
                                        FontSize="16" 
-                                       Style="{StaticResource MenuButtonTheme}"
-                                        
-                                        Command="{Binding AboutProgramViewCommand}"/>
+                                       Style="{StaticResource MenuButtonTheme}" 
+                                       Command="{Binding AboutProgramViewCommand}"/>
+                <RadioButton Content="Мой профиль"
+                             x:Name="profileMenuButton"
+                                       Height="50"
+                                       Foreground="#0D47A1"
+                                       FontSize="16" 
+                                       Style="{StaticResource MenuButtonTheme}" 
+                                       Command="{Binding ProfileProgramViewCommand}"/>
 
 
 
 
             </StackPanel>
+            
+            <!--Эмблема приложения-->
+            <TextBlock
+                Margin="20, 0, 0, 0"
+                FontSize="26"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center">
+                <Run
+                        Text="Логист"
+                        Foreground="#03a9f4"/><Run
+                         FontWeight="Bold"
+                        Text="100ТЗ"
+                         Foreground="#0d47a1"/>
+            </TextBlock>
 
             <TextBox Width="250"
                             Height="40"

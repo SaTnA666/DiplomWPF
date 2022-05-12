@@ -20,6 +20,7 @@
         <AssociationConnector Association="LogisticModel.FK_LogisticsCalculation_Product" ManuallyRouted="false" />
         <AssociationConnector Association="LogisticModel.FK_Profile_User" ManuallyRouted="false" />
         <AssociationConnector Association="LogisticModel.FK_Statistics_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LogisticModel.Cities" Width="1.5" PointX="6.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
