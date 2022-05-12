@@ -48,6 +48,10 @@
                 <view:HomeView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel1:ProfileViewModel}">
+                <view:ProfileView/>
+            </DataTemplate>
+
         </ResourceDictionary>
         
         

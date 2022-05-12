@@ -80,7 +80,7 @@
                                        Foreground="#0D47A1"
                                        FontSize="16" 
                                        Style="{StaticResource MenuButtonTheme}" 
-                                       Command="{Binding ProfileProgramViewCommand}"/>
+                                       Command="{Binding ProfileViewCommand}"/>
 
 
 

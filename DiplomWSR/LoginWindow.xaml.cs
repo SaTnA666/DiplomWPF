@@ -65,14 +65,15 @@ namespace DiplomWSR
                     if (authorizationUser != null)
                     {
                         string roleUser = authorizationUser.Role;
+                        int idProfile = authorizationUser.ID;
                         MainWindow mw = new MainWindow();
-                        mw.DetectUserRole(roleUser);
+                        mw.DetectUserRole(roleUser, idProfile);
                         mw.Show();
                         this.Hide();
                         
                     }
                     else
-                        MessageBox.Show("Логин или пароль не найден");
+                        MessageBox.Show("Неверный логин или пароль");
                 }
             }
             

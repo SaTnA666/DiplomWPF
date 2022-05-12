@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.Entity;
 using DiplomWSR.MVVM.Model;
-
+using DiplomWSR.MVVM.View;
 namespace DiplomWSR
 {
     /// <summary>
@@ -30,7 +30,7 @@ namespace DiplomWSR
         }
 
         //Проверка роли пользователя и подстраивание меню под роль
-        public void DetectUserRole(string roleUser)
+        public void DetectUserRole(string roleUser, int idProfile)
         {
             if (roleUser == "Администратор")
             {
@@ -50,6 +50,9 @@ namespace DiplomWSR
                 aboutMenuButton.Visibility = Visibility.Collapsed;
                 profileMenuButton.Visibility= Visibility.Collapsed;
             }
+
+            ProfileView pf = new ProfileView();
+            pf.InitializationUser(idProfile);
         }
 
 
