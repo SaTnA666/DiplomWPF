@@ -15,6 +15,8 @@ namespace DiplomWSR.MVVM.View
     /// </summary>
     public partial class ProfileView : UserControl
     {
+        static int id;
+
         static string Name;
         static string Date;
         static string Patronomic;
@@ -24,7 +26,7 @@ namespace DiplomWSR.MVVM.View
         public void InitializationUser(int IdProfile)
         {
             
-            int id = IdProfile;
+            id = IdProfile;
             User authUser = null;
             using (UsersContext db = new UsersContext())
             {

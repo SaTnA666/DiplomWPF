@@ -1,19 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.Entity;
-using DiplomWSR.MVVM.Model;
 using DiplomWSR.MVVM.View;
 namespace DiplomWSR
 {
@@ -37,7 +23,7 @@ namespace DiplomWSR
                 
             }
 
-            if (roleUser == "Работник")
+            if (roleUser == "Логист")
             {
                 statisticMenuButton.Visibility= Visibility.Collapsed;
                 aboutMenuButton.Visibility= Visibility.Collapsed;
@@ -53,6 +39,9 @@ namespace DiplomWSR
 
             ProfileView pf = new ProfileView();
             pf.InitializationUser(idProfile);
+
+            CalculationView cv = new CalculationView();
+            cv.InitialUserId(idProfile);
         }
 
 

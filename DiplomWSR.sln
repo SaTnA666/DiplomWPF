@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiplomWSR", "DiplomWSR\DiplomWSR.csproj", "{50F00402-98EA-4215-BE3F-0164FEF1B91D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delivery", "..\Delivery\Delivery.csproj", "{21D5274A-07E7-4127-BFC9-8B0E9860C0A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,12 @@ Global
 		{50F00402-98EA-4215-BE3F-0164FEF1B91D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{50F00402-98EA-4215-BE3F-0164FEF1B91D}.TESTReal|Any CPU.ActiveCfg = Release|Any CPU
 		{50F00402-98EA-4215-BE3F-0164FEF1B91D}.TESTReal|Any CPU.Build.0 = Release|Any CPU
+		{21D5274A-07E7-4127-BFC9-8B0E9860C0A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D5274A-07E7-4127-BFC9-8B0E9860C0A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D5274A-07E7-4127-BFC9-8B0E9860C0A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D5274A-07E7-4127-BFC9-8B0E9860C0A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D5274A-07E7-4127-BFC9-8B0E9860C0A1}.TESTReal|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D5274A-07E7-4127-BFC9-8B0E9860C0A1}.TESTReal|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

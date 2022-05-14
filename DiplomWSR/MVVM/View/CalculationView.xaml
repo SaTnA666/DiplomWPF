@@ -25,43 +25,96 @@
             
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!--Кнопка расчета-->
 
-       <DataGrid x:Name = "logisticDg"
-                 
-                 Grid.Row="2"
-                 Grid.ColumnSpan="5"
-                 Grid.RowSpan="2"
-                 AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"
-                                    Width="35"/>
-                <DataGridTextColumn Header="Название"
-                                    Width="150"/>
-                <DataGridTextColumn Header="Вес"
-                                    Width="50"/>
-                <DataGridTextColumn Header="Длина"
-                                    Width="50"/>
-                <DataGridTextColumn Header="Ширина"
-                                    Width="50"/>
-                <DataGridTextColumn Header="Высота"
-                                    Width="50"/>
-
-            </DataGrid.Columns>
-       </DataGrid>
-
-        <Button Grid.Column="0"
+        <Button Grid.Column="3"
+                Grid.Row="3"
                 Margin="10"
-                Content="Выбрать товар"
+                Content="Расчет"
                 FontSize="15"
-                Click="Button_Click"
-                Command="{Binding CalculationViewCommand}"
-                >
-            
-        </Button>
+                Click="CalculationsClickButton"
+                Command="{Binding CalculationViewCommand}"/>
+
+
+
+        <!--Высота товара-->
+
+        <TextBlock
+            Grid.Row="0"
+            FontSize="16"
+            HorizontalAlignment="Right"
+            Margin="0 0 20 0"
+            VerticalAlignment="Center"
+            Text="Высота"/>
+
+        <TextBox x:Name="tbxHeight" Grid.Column="1"
+                  Grid.Row="0"
+                  Margin="10">
+
+        </TextBox>
+        
+        <!--Вес товара-->
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            FontSize="16"
+            HorizontalAlignment="Right"
+            Margin="0 0 20 0"
+            VerticalAlignment="Center"
+            Text="Вес"/>
+
+        <TextBox x:Name="tbxWeight" Grid.Column="3"
+                  Grid.Row="0"
+                  Margin="10">
+
+        </TextBox>
+        
+        <!--Длина товара-->
+
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="2"
+            FontSize="16"
+            HorizontalAlignment="Right"
+            Margin="0 0 20 0"
+            VerticalAlignment="Center"
+            Text="Длина"/>
+
+        <TextBox x:Name="tbxLeightf" Grid.Column="3"
+                  Grid.Row="2"
+                  Margin="10">
+
+        </TextBox>
+
+        <!--Ширина-->
+        
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            FontSize="16"
+            HorizontalAlignment="Right"
+            Margin="0 0 20 0"
+            VerticalAlignment="Center"
+            Text="Ширина"/>
+
+        <TextBox x:Name="tbxWidth" Grid.Column="1"
+                  Grid.Row="2"
+                  Margin="10">
+
+        </TextBox>
+
+
+
+
+
+        <!--Город откуда-->
 
         <TextBlock
             Grid.Row="1"
@@ -71,11 +124,13 @@
             VerticalAlignment="Center"
             Text="Откуда"/>
 
-        <TextBox x:Name="cmbFrom" Grid.Column="1"
+        <TextBox x:Name="tbxFrom" Grid.Column="1"
                   Grid.Row="1"
                   Margin="10">
             
         </TextBox>
+        
+        <!--Город куда-->
 
         <TextBlock
             Grid.Row="1"
@@ -86,11 +141,50 @@
             VerticalAlignment="Center"
             Text="Куда"/>
         
-        <TextBox x:Name="cmdWhere" Grid.Column="3"
+        <TextBox x:Name="tbxWhere" Grid.Column="3"
                   Grid.Row="1"
                   Margin="10">
 
         </TextBox>
+        
+        <!--Количество-->
+
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            FontSize="16"
+            HorizontalAlignment="Right"
+            Margin="0 0 20 0"
+            VerticalAlignment="Center"
+            Text="Количество"/>
+
+        <TextBox x:Name="tbxCount" Grid.Column="1"
+                  Grid.Row="3"
+                  Margin="10"/>
+        
+        <!--Таблица с результатами расчета-->
+
+        <DataGrid
+            x:Name="calculationDg"
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="4"
+            Grid.Row="4"
+            AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="140" Header="Сервис доставки" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Width="140" Header="Время доставки" Binding="{Binding Path=Days}"/>
+                <DataGridTextColumn Width="140" Header="Цена доставки" Binding="{Binding Path=Price}"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+        <Button Grid.Column="3"
+                Grid.Row="4"
+                Margin="10"
+                Content="Сохранить"
+                FontSize="15"
+                Click="SaveStatisticUser"
+                />
 
     </Grid>
     
