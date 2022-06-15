@@ -7,57 +7,41 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        
+
         <TextBlock
                   Grid.Column="1"
                   Grid.Row="1"
                   Text="Имя"
                   FontSize="16"
-                  Foreground="#2196F3"
-                  Margin="0 0 0 0">
-
-        </TextBlock>
+                  Foreground="#2196F3"/>
 
         <TextBlock
                   Grid.Column="1"
                   Grid.Row="2"
                   Text="Фамилия"
                   FontSize="16"
-                  Foreground="#2196F3"
-                  Margin="0 0 0 0">
-
-        </TextBlock>
+                  Foreground="#2196F3"/>
 
         <TextBlock
                   Grid.Column="1"
                   Grid.Row="3"
                   Text="Отчество"
                   FontSize="16"
-                  Foreground="#2196F3"
-                  Margin="0 0 0 0">
-
-        </TextBlock>
+                  Foreground="#2196F3"/>
 
         <TextBlock
                   Grid.Column="1"
                   Grid.Row="4"
-                  Grid.ColumnSpan="2"
                   Text="Дата рождения"
                   FontSize="16"
-                  Foreground="#2196F3"
-                  Margin="0 0 0 0">
-
-        </TextBlock>
+                  Foreground="#2196F3"/>
 
         <TextBlock
                   Grid.Column="1"
                   Grid.Row="5"
                   Text="Должность"
                   FontSize="16"
-                  Foreground="#2196F3"
-                  Margin="0 0 0 0">
-
-        </TextBlock>
+                  Foreground="#2196F3"/>
 
         <TextBlock Text="Мой профиль"
                             Grid.Row="0"
@@ -66,8 +50,8 @@
                             Foreground="#2196F3"
                             FontSize="26"
                             HorizontalAlignment="Left"
-                            Margin="0,0,0,10"/>
-        
+                            Margin="0,0,0,10" Width="166"/>
+
         <!--Данные из таблицы-->
 
         <TextBlock
@@ -77,10 +61,7 @@
                   
                   FontSize="16"
                   FontWeight="DemiBold"
-                  Foreground="#0d47a1"
-                  Margin="0 0 0 0">
-
-        </TextBlock>
+                  Foreground="#0d47a1"/>
 
         <TextBlock
             x:Name="surnameUserText"
@@ -89,10 +70,7 @@
                   
                   FontSize="16"
                   FontWeight="DemiBold"
-                  Foreground="#0d47a1"
-                  Margin="0 0 0 0">
-
-        </TextBlock>
+                  Foreground="#0d47a1"/>
 
         <TextBlock
             x:Name="patronomycUserText"
@@ -101,10 +79,7 @@
                   
                   FontSize="16"
                   FontWeight="DemiBold"
-                  Foreground="#0d47a1"
-                  Margin="0 0 0 0">
-
-        </TextBlock>
+                  Foreground="#0d47a1"/>
 
         <TextBlock
             x:Name="dateUserText"
@@ -113,10 +88,7 @@
                   
                   FontSize="16"
                   FontWeight="DemiBold"
-                  Foreground="#0d47a1"
-                  Margin="0 0 0 0">
-
-        </TextBlock>
+                  Foreground="#0d47a1"/>
 
         <TextBlock
             x:Name="postUserText"
@@ -125,10 +97,7 @@
                   
                   FontSize="16"
                   FontWeight="DemiBold"
-                  Foreground="#0d47a1"
-                  Margin="0 0 0 0">
-
-        </TextBlock>
+                  Foreground="#0d47a1"/>
 
         <TextBlock Text="Мой профиль"
                             Grid.Row="0"
@@ -137,14 +106,14 @@
                             Foreground="#2196F3"
                             FontSize="26"
                             HorizontalAlignment="Left"
-                            Margin="0,0,0,10"/>
+                            Margin="0,0,0,10" Width="166"/>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="243"/>
+            <ColumnDefinition Width="157"/>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="190"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -154,7 +123,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            
+
         </Grid.RowDefinitions>
 
 

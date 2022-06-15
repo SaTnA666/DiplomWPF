@@ -22,13 +22,26 @@ namespace DiplomWSR.MVVM.View
     /// </summary>
     public partial class StatisticView : UserControl
     {
+
+        static int id;
+
         DbContextStatistict db;
         public StatisticView()
         {
             InitializeComponent();
 
+            id = 1;
+            User authUser = null;
+            using (UsersContext db = new UsersContext())
+            {
+                authUser = db.Users.Where(b => b.ID == id).FirstOrDefault();
+
+                Name = authUser.Surname;
+            }
+
             db = new DbContextStatistict();
             db.Statistics.Load();
+            string Surname = Name;
             statisticsGrid.ItemsSource = db.Statistics.Local.ToBindingList();
         }
     }

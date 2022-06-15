@@ -10,7 +10,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        AllowsTransparency="False"
+        AllowsTransparency="True"
         Background="Transparent">
 
     <Window.DataContext>
@@ -81,6 +81,13 @@
                                        FontSize="16" 
                                        Style="{StaticResource MenuButtonTheme}" 
                                        Command="{Binding ProfileViewCommand}"/>
+                <RadioButton Content="Выход"
+                             x:Name="exitMenuButton"
+                                       Height="50"
+                                       Foreground="#0D47A1"
+                                       FontSize="16" 
+                                       Style="{StaticResource MenuButtonTheme}" 
+                                       Click="exitMenuButton_Click"/>
 
 
 

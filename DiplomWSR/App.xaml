@@ -17,6 +17,8 @@
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/TextBoxSearchTheme.xaml"/>
                 <ResourceDictionary Source="Styles/DataGrid.xaml"/>
+                <ResourceDictionary Source="Theme/CalcTextBox.xaml"/>
+                <ResourceDictionary Source="Theme/CalcButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             
@@ -25,6 +27,7 @@
                 <view:HomeView/>
             </DataTemplate>
 
+            
             <PathGeometry x:Key="showPassword"
                       Figures="M15 5C6.081703 5 0.32098813 14.21118 0.21679688 14.378906 A 1 1 0 0 0 0 15 A 1 1 0 0 0 0.16210938 15.544922 A 1 1 0 0 0
                       0.16601562 15.550781C0.18320928 15.586261 5.0188313 25 15 25C24.938822 25 29.767326 15.678741 29.826172 15.564453 A 1 1 0 0 0 29.837891 
@@ -51,6 +54,7 @@
             <DataTemplate DataType="{x:Type viewModel1:ProfileViewModel}">
                 <view:ProfileView/>
             </DataTemplate>
+            
 
         </ResourceDictionary>
         

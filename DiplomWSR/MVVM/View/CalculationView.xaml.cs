@@ -16,12 +16,23 @@ namespace DiplomWSR.MVVM.View
     {
         static int countCalc; //Счетчик расчетов
         static int userId; //Айди пользователя
-        static DateTime nowTime = DateTime.Now; //Дата начала смены
+        static DateTime startTime; //Дата и время начала смены
 
         public CalculationView()
         {
-
             InitializeComponent();
+
+            tbxWeight.IsEnabled = false;
+            tbxHeight.IsEnabled = false;
+            tbxLeightf.IsEnabled = false;
+            tbxWidth.IsEnabled = false;
+            tbxFrom.IsEnabled = false;
+            tbxWhere.IsEnabled = false;
+            tbxCount.IsEnabled = false;
+            endWork.IsEnabled = false;
+            calculationDg.IsEnabled = false;
+            calculationButton.IsEnabled = false;
+            endWork.IsEnabled = false;
 
         }
 
@@ -65,12 +76,13 @@ namespace DiplomWSR.MVVM.View
         public void SaveStatisticUser(object sender, RoutedEventArgs e)
         {
 
-            using(Model.DbContextStatistict db = new DbContextStatistict())
+
+            using (Model.DbContextStatistict db = new DbContextStatistict())
             {
                 Statistics result = new Statistics
                 {
 
-                    LoginTime = nowTime,
+                    LoginTime = startTime,
                     ReleaseTime = DateTime.Now,
                     CalculationsCarried = countCalc,
                     UserID = userId,
@@ -79,18 +91,31 @@ namespace DiplomWSR.MVVM.View
                 };
 
                 db.Statistics.Add(result);
-
                 db.SaveChanges();
+
+                
             }
 
-            //using (DbContextStatistic db = new DbContextStatistic())
-            //{
+        }
 
+        private void startWorkButton(object sender, RoutedEventArgs e)
+        {
 
+            startTime = DateTime.Now;
 
-            //}
-            //DataContext = null;
-            //DataContext = new ProductsView();
+            tbxWeight.IsEnabled = true;
+            tbxHeight.IsEnabled = true;
+            tbxLeightf.IsEnabled = true;
+            tbxWidth.IsEnabled = true;
+            tbxFrom.IsEnabled = true;
+            tbxWhere.IsEnabled = true;
+            tbxCount.IsEnabled = true;
+            endWork.IsEnabled = true;
+            calculationDg.IsEnabled = true;
+            calculationButton.IsEnabled = true;
+            endWork.IsEnabled = true;
+            
+
         }
     }
 }

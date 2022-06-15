@@ -90,7 +90,7 @@
                 </DataTrigger>
 
                 <!--Показывать только когда IsPassword = true;-->
-                <!--If passwordBox is visible then hide TextBox-->
+                <!--Если passwordBox visible тогда TextBox = hide-->
 
 
                 <DataTrigger Binding="{Binding Visibility, ElementName=passwordBox}" Value="Visible">

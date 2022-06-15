@@ -30,6 +30,7 @@
                 <DataGridTextColumn Binding="{Binding ReleaseTime}" Header="Время выхода" Width="*"/>
                 <DataGridTextColumn Binding="{Binding CalculationsCarried}" Header="Проведено рассчетов" Width="*"/>
                 <DataGridTextColumn Binding="{Binding UserID}" Header="Пользователь" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=Surname}" Header="Пользователь" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Efficiency}" Header="Эффективность" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>

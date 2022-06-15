@@ -10,13 +10,15 @@ using DiplomWSR.MVVM.Model;
 
 namespace DiplomWSR.MVVM.View
 {
+
+    
     /// <summary>
     /// Логика взаимодействия для ProfileView.xaml
     /// </summary>
     public partial class ProfileView : UserControl
     {
         static int id;
-
+        
         static string Name;
         static string Date;
         static string Patronomic;
@@ -38,6 +40,11 @@ namespace DiplomWSR.MVVM.View
                 Date = Convert.ToString(authUser.Birthday);
                 Post = authUser.Post;
             }
+            //proIndex = Date.IndexOf(' ');
+            //if(proIndex >= 0)
+            //Date.Substring(0, proIndex + 1);
+
+            Date = Date.Split(' ')[0];
 
             surnameUserText.Text = Surname;
         }
@@ -48,6 +55,8 @@ namespace DiplomWSR.MVVM.View
 
             surnameUserText.Text = Surname;
             nameUserText.Text = Name;
+
+            
             dateUserText.Text = Date;
             patronomycUserText.Text = Patronomic;
             postUserText.Text = Post;

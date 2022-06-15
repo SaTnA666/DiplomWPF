@@ -27,6 +27,7 @@ namespace DiplomWSR
             {
                 statisticMenuButton.Visibility= Visibility.Collapsed;
                 aboutMenuButton.Visibility= Visibility.Collapsed;
+                exitMenuButton.Visibility= Visibility.Visible;
 
             }
 
@@ -44,6 +45,14 @@ namespace DiplomWSR
             cv.InitialUserId(idProfile);
         }
 
+        public void testMethod()
+        {
+            exitMenuButton.Visibility = Visibility.Visible;
+        }
 
+        private void exitMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
